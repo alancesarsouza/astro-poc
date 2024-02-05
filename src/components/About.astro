@@ -3,7 +3,7 @@ import c from "../constants";
 
 const mdAbout = await Astro.glob(`../content/about/*.md`);
 
-const Content = mdAbout[0].Content;
+const Content = mdAbout?.[0].Content;
 ---
 
 <article class="relative flex flex-col gap-8">

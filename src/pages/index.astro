@@ -1,5 +1,4 @@
 ---
-import c from "../constants";
 import Layout from "../layouts/Layout.astro";
 import About from "../components/About.astro";
 import Posts from "../components/Posts.astro";
@@ -12,27 +11,27 @@ import SuccessStories from "../components/SuccessStories.astro";
 <Layout title="Lorem ipsum">
 	<main>
 		<section class="relative">
-			<About client:view />
+			<About />
 		</section>
 
 		<section class="relative">
-			<Posts client:view />
+			<Posts />
 		</section>
 
 		<section class="relative">
-			<Sales client:view />
+			<Sales />
 		</section>
 
 		<section class="relative">
-			<CTA client:view />
+			<CTA />
 		</section>
 
 		<section class="relative">
-			<Resource client:view />
+			<Resource />
 		</section>
 
 		<section class="relative">
-			<SuccessStories client:view />
+			<SuccessStories />
 		</section>
 	</main>
 
