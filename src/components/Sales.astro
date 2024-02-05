@@ -1,0 +1,31 @@
+---
+import c from "../constants";
+
+const mdSales = await Astro.glob(`../content/sales/*.md`);
+
+const sales = mdSales.map((n) => ({
+  title: n.frontmatter.title,
+  Content: n.Content,
+}));
+---
+
+<article class="flex flex-col gap-8">
+  <span
+    id={`${c.ids.sales.toLowerCase().replace(" ", "-")}`}
+    class="absolute"
+    style="margin-top: -3rem;"></span>
+
+  <div class="mt-8">
+    {
+      sales.map(({ title, Content }) => (
+        <div class="">
+          <h2>{title}</h2>
+
+          <article>
+            <Content />
+          </article>
+        </div>
+      ))
+    }
+  </div>
+</article>

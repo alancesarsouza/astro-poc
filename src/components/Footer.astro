@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../public/assets/logo.webp";
+import c from "../constants";
+
+const mdAbout = await Astro.glob(`../content/contact/*.md`);
+
+const Address = mdAbout[0].Content;
+const Content = mdAbout[1].Content;
+---
+
+<footer
+  class="py-8 bg-secondary w-full"
+  id={`${c.ids.contact.toLowerCase().replace(" ", "-")}`}
+>
+  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class="flex justify-center gap-6 sm:justify-between">
+      <Image src={logo} alt="Logo" class="self-start h-10 w-auto" />
+
+      <div class="flex gap-2 sm:gap-8 flex-wrap self-center">
+        {
+          Object.entries(c.socialMedias).map(([name, link]) => (
+            <a
+              href={link}
+              class="flex-1 text-link hover:text-link-hover text-sm font-medium"
+              aria-current="page"
+            >
+              {name}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="px-4 flex-col py-8 flex gap-10 md:gap-8 xl:flex-row">
+      <div class="flex flex-col gap-10 md:gap-8 flex-1 sm:flex-row">
+        <Content />
+      </div>
+
+      <div class="flex flex-col xl:flex-2">
+        <Address />
+      </div>
+    </div>
+  </div>
+</footer>

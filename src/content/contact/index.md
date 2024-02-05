@@ -1,0 +1,3 @@
+Estamos ansiosos para ouvir de você! Se tiver alguma dúvida, sugestão ou apenas quiser trocar ideias sobre tecnologia, sinta-se à vontade para entrar em contato conosco através dos seguintes meios:
+
+Siga-nos nas redes sociais para ficar atualizado sobre as últimas novidades, eventos e artigos técnicos da Lorem Ipsum. Estamos aqui para criar conexões e compartilhar conhecimento. Esperamos ouvir de você em breve!

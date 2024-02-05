@@ -1,0 +1,31 @@
+---
+import c from "../constants";
+
+const mdPosts = await Astro.glob(`../content/resources/*.md`);
+
+const posts = mdPosts.map((n) => ({
+  title: n.frontmatter.title,
+  Content: n.Content,
+}));
+---
+
+<article class="flex flex-col gap-8">
+  <span
+    id={`${c.ids.posts.toLowerCase().replace(" ", "-")}`}
+    class="absolute"
+    style="margin-top: -3rem;"></span>
+
+  <div class="mt-8">
+    {
+      posts.map(({ title, Content }) => (
+        <div>
+          <h2>{title}</h2>
+
+          <article>
+            <Content />
+          </article>
+        </div>
+      ))
+    }
+  </div>
+</article>

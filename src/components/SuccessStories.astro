@@ -1,0 +1,33 @@
+---
+import c from "../constants";
+
+const mdSuccessStories = await Astro.glob(`../content/successStories/*.md`);
+
+const successStories = mdSuccessStories.map((n) => ({
+  title: n.frontmatter.title,
+  Content: n.Content,
+}));
+---
+
+<article class="flex flex-col">
+  <span
+    id={`${c.ids.successStories.toLowerCase().replace(" ", "-")}`}
+    class="absolute"
+    style="margin-top: -3rem;"></span>
+
+  <div class="mt-8 flex flex-wrap">
+    {
+      successStories.map(({ title, Content }) => (
+        <div class="w-full p-2 xl:w-1/2 ">
+          <div class="p-8 rounded-xl bg-secondary border-sm drop-shadow-md">
+            <h2>{title}</h2>
+
+            <article>
+              <Content />
+            </article>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</article>
